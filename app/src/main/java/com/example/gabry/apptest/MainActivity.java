@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
         TextView bpmText = (TextView) findViewById(R.id.bps);
         bpmText.setText(""+bpm);
 
-        TextView timeSignatureText = (TextView) findViewById(R.id.timeSignature);
+        TextView timeSignatureText = (TextView) findViewById(R.id.timesignature);
         timeSignatureText.setText(""+beats+"/"+noteValue);
 
         plusButton = (Button) findViewById(R.id.plus);
@@ -79,10 +79,10 @@ public class MainActivity extends Activity {
         minusButton = (Button) findViewById(R.id.minus);
         minusButton.setOnLongClickListener(minusListener);
 
-        currentBeat = (TextView) findViewById(R.id.currentBeat);
+        currentBeat = (TextView) findViewById(R.id.currentbeat);
         currentBeat.setTextColor(Color.GREEN);
 
-        Spinner beatSpinner = (Spinner) findViewById(R.id.beatSpinner);
+        Spinner beatSpinner = (Spinner) findViewById(R.id.beatspinner);
         ArrayAdapter<Beats> arrayBeats =
                 new ArrayAdapter<Beats>(this,
                         android.R.layout.simple_spinner_item, Beats.values());
@@ -226,7 +226,7 @@ public class MainActivity extends Activity {
                                    long arg3) {
             // TODO Auto-generated method stub
             Beats beat = (Beats) arg0.getItemAtPosition(arg2);
-            TextView timeSignature = (TextView) findViewById(R.id.timeSignature);
+            TextView timeSignature = (TextView) findViewById(R.id.timesignature);
             timeSignature.setText(""+beat+"/"+noteValue);
             metroTask.setBeat(beat.getNum());
         }
@@ -246,7 +246,7 @@ public class MainActivity extends Activity {
                                    long arg3) {
             // TODO Auto-generated method stub
             NoteValues noteValue = (NoteValues) arg0.getItemAtPosition(arg2);
-            TextView timeSignature = (TextView) findViewById(R.id.timeSignature);
+            TextView timeSignature = (TextView) findViewById(R.id.timesignature);
             timeSignature.setText(""+beats+"/"+noteValue);
         }
 
@@ -260,12 +260,12 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onKeyUp(int keycode, KeyEvent e) {
-        SeekBar volumebar = (SeekBar) findViewById(R.id.volumebar);
+        SeekBar volumeBar = (SeekBar) findViewById(R.id.volumebar);
         volume = (short) audio.getStreamVolume(AudioManager.STREAM_MUSIC);
         switch(keycode) {
             case KeyEvent.KEYCODE_VOLUME_UP:
             case KeyEvent.KEYCODE_VOLUME_DOWN:
-                volumebar.setProgress(volume);
+                volumeBar.setProgress(volume);
                 break;
         }
 
