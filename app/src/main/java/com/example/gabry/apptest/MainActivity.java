@@ -70,7 +70,7 @@ public class MainActivity extends Activity {
         TextView bpmText = (TextView) findViewById(R.id.bps);
         bpmText.setText(""+bpm);
 
-        TextView timeSignatureText = (TextView) findViewById(R.id.timesignature);
+        TextView timeSignatureText = (TextView) findViewById(R.id.timeSignature);
         timeSignatureText.setText(""+beats+"/"+noteValue);
 
         plusButton = (Button) findViewById(R.id.plus);
@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
         currentBeat = (TextView) findViewById(R.id.currentBeat);
         currentBeat.setTextColor(Color.GREEN);
 
-        Spinner beatSpinner = (Spinner) findViewById(R.id.beatspinner);
+        Spinner beatSpinner = (Spinner) findViewById(R.id.beatSpinner);
         ArrayAdapter<Beats> arrayBeats =
                 new ArrayAdapter<Beats>(this,
                         android.R.layout.simple_spinner_item, Beats.values());
@@ -226,7 +226,7 @@ public class MainActivity extends Activity {
                                    long arg3) {
             // TODO Auto-generated method stub
             Beats beat = (Beats) arg0.getItemAtPosition(arg2);
-            TextView timeSignature = (TextView) findViewById(R.id.timesignature);
+            TextView timeSignature = (TextView) findViewById(R.id.timeSignature);
             timeSignature.setText(""+beat+"/"+noteValue);
             metroTask.setBeat(beat.getNum());
         }
@@ -246,7 +246,7 @@ public class MainActivity extends Activity {
                                    long arg3) {
             // TODO Auto-generated method stub
             NoteValues noteValue = (NoteValues) arg0.getItemAtPosition(arg2);
-            TextView timeSignature = (TextView) findViewById(R.id.timesignature);
+            TextView timeSignature = (TextView) findViewById(R.id.timeSignature);
             timeSignature.setText(""+beats+"/"+noteValue);
         }
 
