@@ -79,7 +79,7 @@ public class MainActivity extends Activity {
         minusButton = (Button) findViewById(R.id.minus);
         minusButton.setOnLongClickListener(minusListener);
 
-        currentBeat = (TextView) findViewById(R.id.currentbeat);
+        currentBeat = (TextView) findViewById(R.id.currentBeat);
         currentBeat.setTextColor(Color.GREEN);
 
         Spinner beatSpinner = (Spinner) findViewById(R.id.beatspinner);
